@@ -1,0 +1,28 @@
+body {
+    background-color: #9c9c9c;
+}
+
+.parag {
+    padding: 3px;
+    margin: 5px;
+    border: 2px solid black;
+    background-color: white;;
+    border-radius: 7px;
+}
+
+p {
+    text-align: center;
+    line-height: 1.5em;
+    border: 1px dashed red;
+    padding: 2px;
+    margin: auto;
+    border-radius: 7px;
+}
+
+section {
+    /* width: 100%; */
+    border: 1px dashed grey;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 7px;
+}
