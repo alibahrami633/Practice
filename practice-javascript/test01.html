@@ -2,9 +2,52 @@
 <html>
     <head>
         <title></title>
-        <script src="code.js"></script>
+        <script>
+
+            function getOS() {
+                var userAgent = window.navigator.userAgent,
+                    platform = window.navigator.platform,
+                    macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+                    windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+                    iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+                    os = null;
+
+                if (macosPlatforms.indexOf(platform) !== -1) {
+                    os = 'Mac OS';
+                } else if (iosPlatforms.indexOf(platform) !== -1) {
+                    os = 'iOS';
+                } else if (windowsPlatforms.indexOf(platform) !== -1) {
+                    os = 'Windows';
+                } else if (/Android/.test(userAgent)) {
+                    os = 'Android';
+                } else if (!os && /Linux/.test(platform)) {
+                    os = 'Linux';
+                }
+
+                return os;
+            }
+
+            alert("Welcome " + getOS() + " user!");
+
+        </script>
+        <script>
+
+            navigator.geolocation.getCurrentPosition(function(position) {
+
+                // Get the coordinates of the current position.
+                var lat = position.coords.latitude;
+                var lng = position.coords.longitude;
+
+                alert("your current latitude: " + lat + " and longtitude: " + lng);
+                if (lng > 138) 
+                    alert("You are located in EAST coast!");
+                else
+                    alert("You are located in WEST coast!");
+            });
+
+        </script>
     </head>
     <body>
-        
+        <div id="demo"></div>
     </body>
 </html>
