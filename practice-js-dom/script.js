@@ -16,6 +16,7 @@ h2Tag1.innerText = "I am H2";
 h2Tag1.style.textAlign = "center";
 
 bodyTag.appendChild(divTag);
+
 divTag.appendChild(imgTag);
 imgTag.style.width = "100%";
 imgTag.style.margin = "50%";
