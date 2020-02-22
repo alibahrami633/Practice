@@ -8,6 +8,7 @@ var userFirstNameSpan = document.querySelector("#user-first-name");
 var userLastNameSpan = document.querySelector("#user-last-name");
 var userEmailSpan = document.querySelector("#user-email");
 var userPasswordSpan = document.querySelector("#user-password");
+var clearStorageButton = document.querySelector("#clearStorage");
 
 function displayMessage(type, message) {
   msgDiv.textContent = message;
@@ -48,4 +49,9 @@ signUpButton.addEventListener("click", function(event) {
     userEmailSpan.textContent = lastUser.email;
     userPasswordSpan.textContent = lastUser.password;
   }
+});
+
+clearStorageButton.addEventListener("click", function() {
+  document.preventDefault();
+  localStorage.clear();
 });
