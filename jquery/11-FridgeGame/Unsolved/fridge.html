@@ -81,6 +81,14 @@
       // 6. Finally, append each "letterBtn" to the "#buttons" div (provided).
 
       // Be sure to test that your code works for this major task, before proceeding to the next one!
+      for (var i = 0; i < letters.length; i++) {
+        var letterBtn = $("<button>", {
+          class: "letter-button letter letter-button-color",
+          "data-letter": letters[i],
+          text: letters[i]
+        });
+        $("#buttons").append(letterBtn);
+      }
 
       // MAJOR TASK #2: ATTACH ON-CLICK EVENTS TO "LETTER" BUTTONS
       // =================================================================================
