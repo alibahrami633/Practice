@@ -30,7 +30,10 @@
         <button class="btn btn-warning btn-xs theme-button">
           <span class="fa fa-music"></span> Play Theme!</button>
         <button class="btn btn-dark btn-xs pause-button">
-          <span class="fa fa-pause"></span> Pause Song</button>
+          <span class="fa fa-pause">            
+          </span> 
+          Pause Song
+        </button>
       </div>
 
     </div>
@@ -49,6 +52,8 @@
                 <span class="fa fa-plus"></span> Grow</button>
               <button class="btn btn-danger btn-lg shrink-button">
                 <span class="fa fa-minus"></span> Shrink</button>
+              <button class="btn btn-success btn-lg clone-button">
+                <span class="fa fa-minus"></span> Clone</button>
             </div>
           </div>
         </div>
@@ -61,7 +66,7 @@
               <button class="btn btn-dark btn-lg vis-button">
                 <span class="fa fa-eye"></span> Visible</button>
               <button class="btn btn-info btn-lg invis-button">
-                <span class="fa fa-eye-slash"></span> Invisible</button>
+                <span class="fa fa-eye-slash"></span> Invisible</button>              
             </div>
           </div>
         </div>
@@ -124,6 +129,9 @@
     });
     $(".shrink-button").on("click", function() {
       captainPlanet.animate({ height: "100px" });
+    });
+    $(".clone-button").on("click", function() {
+      captainPlanet.clone().appendTo("body");
     });
 
     // Visibility Buttons
