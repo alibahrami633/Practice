@@ -17,8 +17,8 @@ db.on("error", error => {
   console.log("Database Error:", error);
 });
 
-app.post("/submit", ({ body }, res) => {
-  const book = body;
+app.post("/submit", ({ body: book }, res) => { // { body }
+  // const book = body;
 
   book.read = false;
 
@@ -51,10 +51,10 @@ app.get("/unread", (req, res) => {
   });
 });
 
-app.put("/markread/:id", ({ params }, res) => {
+app.put("/markread/:id", ({ params : id }, res) => { // {params} - deconstruct -> {params : id}
   db.books.update(
     {
-      _id: mongojs.ObjectId(params.id)
+      _id: mongojs.ObjectId(id) // (params.id) - deconstruct -> (id)
     },
     {
       $set: {
