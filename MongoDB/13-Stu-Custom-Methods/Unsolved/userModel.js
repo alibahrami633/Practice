@@ -28,7 +28,7 @@ const UserSchema = new Schema({
     trim: true,
     required: "Password is Required",
     validate: [
-      ({length}) => length >= 6,
+      ({ length }) => length >= 6,
       "Password should be longer."
     ]
   },
@@ -50,7 +50,7 @@ const UserSchema = new Schema({
 });
 
 // setFullName: sets the current user's `fullName` property to their lastName appended to their `firstName`
-UserSchema.methods.setFullName = function() {
+UserSchema.methods.setFullName = function () {
   this.fullName = `${this.firstName} ${this.lastName1}`;
   return this.fullName;
 }
